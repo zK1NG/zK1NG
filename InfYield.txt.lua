@@ -6391,7 +6391,7 @@ end)
 Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if State == Enum.TeleportState.Started then
 		if KeepInfYield and queueteleport then
-			queueteleport("https://raw.githubusercontent.com/zK1NG/zK1NG/main/InfYield.txt'))()")
+			queueteleport("https://raw.githubusercontent.com/zK1NG/zK1NG/main/InfYield.txt.lua'))()")
 		end
 	end
 end)
