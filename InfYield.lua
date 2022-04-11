@@ -4426,6 +4426,7 @@ end
 
 CMDs = {}
 CMDs[#CMDs + 1] = {NAME = 'discord / support / help', DESC = 'Invite to the Infinite Yield support server.'}
+CMDs[#CMDs + 1] = {NAME = 'killfling / killf', DESC = 'MalwareHub'}
 CMDs[#CMDs + 1] = {NAME = 'console', DESC = 'Loads old Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'explorer / dex', DESC = 'Opens DEX explorer'}
 CMDs[#CMDs + 1] = {NAME = 'remotespy / rspy', DESC = 'Opens FrostHook Spy'}
@@ -6411,6 +6412,63 @@ addcmd('addalias',{},function(args, speaker)
 		end
 	end
 end)
+
+addcmd('killfling', {'killf'}, function(args, speaker)
+		for i,v in pairs(game.Players.LocalPlayer:FindFirstChildOfClass("Backpack"):GetDescendants()) do
+    if v:IsA("Tool") or v:IsA("HopperBin") then
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+   if v:IsA("Tool") then
+       v.Parent = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+       v.GripPos = Vector3.new(5000, 5000, 5000)
+
+       v.Handle.Massless = true
+       v.Parent = game.Players.LocalPlayer.Character
+   end
+end
+
+local players = getPlayer(args[1], speaker)
+	for i,v in pairs(players) do
+		if Players[v].Character ~= nil then
+			if speaker.Character:FindFirstChildOfClass('Humanoid') and speaker.Character:FindFirstChildOfClass('Humanoid').SeatPart then
+				speaker.Character:FindFirstChildOfClass('Humanoid').Sit = false
+				wait(.1)
+			end
+            speaker.Character.Humanoid:UnequipTools()
+	        local Humanoid = speaker.Character.Humanoid:Clone()
+	        local Tool = speaker.Backpack:FindFirstChildOfClass("Tool")
+	        speaker.Character.Animate.Disabled = true
+	        speaker.Character.Humanoid:Destroy()
+	        Humanoid.Parent = speaker.Character
+	        Tool.Parent = speaker.Character
+            game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+	        wait()
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+	        wait()
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+	        wait()
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+	        wait()
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+	        wait()
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+	        wait()
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+	        wait()
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+	        wait()
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+	        wait()
+            firetouchinterest(Players[v].Character.HumanoidRootPart, Tool.Handle, 0);
+	        Players[v].Character.HumanoidRootPart.CFrame = CFrame.new(speaker.Character.RightHand.Position)
+		end
+	end
+	wait()
+game.Players.LocalPlayer.Character:Destroy()
 
 addcmd('betterkill', {'bkill'}, function(args, speaker)
     local players = getPlayer(args[1], speaker)
